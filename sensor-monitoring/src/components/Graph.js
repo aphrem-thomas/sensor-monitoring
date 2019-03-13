@@ -43,20 +43,27 @@ const rangeData = [
 ]
   
 class Graph extends Component {
+  constructor(props){
+    super(props);
+    this.state={data:[]}
+  }
+  componentWillReceiveProps(nextProps){
+    this.setState({data:[...this.state.data,{"time":nextProps.data.created_at, "value": nextProps.data.temperature}]})
+  }
   render() {
     return (
       <div className="Graph">
         <AreaChart
           width={730}
           height={250}
-          data={rangeData}
+          data={this.state.data}
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
           }}
         >
-          <XAxis dataKey="day" />
+          <XAxis dataKey="time" />
           <YAxis />
-          <Area dataKey="temperature" stroke="#8884d8" fill="#8884d8" />
+          <Area dataKey="value" stroke="#8884d8" fill="#8884d8" />
           <Tooltip />
         </AreaChart>
       </div>
