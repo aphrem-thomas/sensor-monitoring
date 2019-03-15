@@ -63,7 +63,7 @@ class Graph extends Component {
         >
           <XAxis dataKey="time" />
           <YAxis />
-          <Area dataKey="value" stroke="#8884d8" fill="#8884d8" />
+          <Area dataKey="value" stroke={this.props.color} fill="#8884d8" />
           <Tooltip />
         </AreaChart>
       </div>

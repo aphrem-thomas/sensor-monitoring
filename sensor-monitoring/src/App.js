@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Graph data={this.state.currentData}/>
+       <Graph data={this.state.currentData} color='#8884d8'/>
        {/* <ul>{this.state.data.map(o=><h3><li>{o.temperature}</li></h3>)}</ul> */}
       </div>
     );
