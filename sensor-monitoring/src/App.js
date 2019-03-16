@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Graph from './components/Graph';
+import PieDiagram from './components/Pie'
 import './App.css';
 
 
@@ -40,8 +41,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Graph data={this.state.currentData} color='#8884d8'/>
+       <Graph data={this.state.currentData} color='#8884d8' ylabel="time" xlabel="temperature"/>
        {/* <ul>{this.state.data.map(o=><h3><li>{o.temperature}</li></h3>)}</ul> */}
+       <PieDiagram/>
       </div>
     );
   }
