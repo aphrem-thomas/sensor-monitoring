@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Graph from './components/Graph';
-import PieDiagram from './components/Pie'
+import PieDiagram from './components/Pie';
+import MapComponent from './components/Maps';
 import './App.css';
+import Guage from './components/Guage';
 
 
 class App extends Component {
@@ -10,7 +12,7 @@ class App extends Component {
     this.state={data:[],currentData:null}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://192.168.50.156:5678/");
+    this.connection = new WebSocket("ws://192.168.1.4:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
       let tempData = JSON.parse(evt.data)
@@ -44,6 +46,10 @@ class App extends Component {
        <Graph data={this.state.currentData} color='#8884d8' ylabel="time" xlabel="temperature"/>
        {/* <ul>{this.state.data.map(o=><h3><li>{o.temperature}</li></h3>)}</ul> */}
        <PieDiagram/>
+       <div className="map">
+       <MapComponent/>
+       </div>
+       <Guage/>
       </div>
     );
   }
