@@ -4,7 +4,7 @@ import PieDiagram from './components/Pie';
 import MapComponent from './components/Maps';
 import './App.css';
 import Guage from './components/Guage';
-
+import Home from './Pages/Home';
 
 class App extends Component {
   constructor(props){
@@ -43,13 +43,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Graph data={this.state.currentData} color='#8884d8' ylabel="time" xlabel="temperature"/>
-       {/* <ul>{this.state.data.map(o=><h3><li>{o.temperature}</li></h3>)}</ul> */}
+       {/* <Graph data={this.state.currentData} color='#8884d8' ylabel="time" xlabel="temperature"/>
        <PieDiagram/>
        <div className="map">
        <MapComponent/>
        </div>
-       <Guage/>
+       <Guage/> */}
+       <Home/>
       </div>
     );
   }

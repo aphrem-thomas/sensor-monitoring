@@ -1,0 +1,11 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    background-color:transparent;
+}
+.link{
+    padding: 30px;
+    text-decoration: none;
+    font-size: 30px;
+}

@@ -1,0 +1,20 @@
+.graph{
+    border: 3px;
+    border-radius: 10px;
+    background-color:#282f3d;
+    max-width: 650px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:white;
+    
+}
+
+.heading{
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}

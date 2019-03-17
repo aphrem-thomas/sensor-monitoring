@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PieChart, Pie , Tooltip} from 'recharts';
-
+import './Pie.css';
 const rangeData = [
   {
     "day": "05-01",
@@ -45,7 +45,8 @@ class PieDiagram extends Component {
   render() {
     return (
       <div className="Pie">
-        <PieChart width={730} height={250}>
+       <div className="heading">{this.props.heading}</div>
+        <PieChart width={600} height={250}>
           <Pie data={rangeData} dataKey="temperature" nameKey="day" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label/>
           {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
           <Tooltip/>

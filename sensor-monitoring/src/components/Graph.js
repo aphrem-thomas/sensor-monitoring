@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CartesianGrid, XAxis, YAxis, Area, Tooltip, LineChart,Line,Legend } from 'recharts';
-
+import './Graph.css'
 
 const rangeData = [
   {
@@ -48,16 +48,17 @@ class Graph extends Component {
     this.state = { data: [] }
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({ data: [...this.state.data, { "time": nextProps.data.created_at, "value": nextProps.data.temperature }] })
+    this.setState({ data: [...this.state.data, { "x": nextProps.data.x, "y": nextProps.data.y }] })
   }
   render() {
     return (
-      <div className="Graph">
-        <LineChart width={730} height={250} data={rangeData}
+      <div className="graph">
+        <div className="heading">{this.props.heading}</div>
+        <LineChart width={600} height={300} data={rangeData}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" />
+          {/* <CartesianGrid strokeDasharray="1 1" /> */}
           <XAxis dataKey="day" />
-          <YAxis />
+          <YAxis/>
           <Tooltip />
           <Legend />
           <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
