@@ -48,20 +48,20 @@ class Graph extends Component {
     this.state = { data: [] }
   }
   componentWillReceiveProps(nextProps) {
-    this.setState({ data: [...this.state.data, { "x": nextProps.data.x, "y": nextProps.data.y }] })
+    this.setState({ data: [...this.state.data, this.props.data] })
   }
   render() {
     return (
       <div className="graph">
         <div className="heading">{this.props.heading}</div>
-        <LineChart width={600} height={300} data={rangeData}
+        <LineChart width={600} height={300} data={this.state.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           {/* <CartesianGrid strokeDasharray="1 1" /> */}
-          <XAxis dataKey="day" />
+          <XAxis dataKey={this.props.xlabel} />
           <YAxis/>
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
+          <Line type="monotone" dataKey={this.props.ylabel} stroke="#8884d8" />
         </LineChart>
       </div>
     );

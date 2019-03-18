@@ -9,10 +9,28 @@ import Home from './Pages/Home';
 class App extends Component {
   constructor(props){
     super(props);
-    this.state={data:[],currentData:null}
+    this.state={data:[],currentData:{
+        "entry_id":null,
+        "created_at":null,
+        "temperature":null,
+        "humidity":null,
+        "ozone":null,
+        "pm10":null,
+        "pm2_5":null,
+        "no2":null,
+        "co":null,
+        "aqi":null,
+        "aqi_no2":null,
+        "aqi_pm25":null,
+        "aqi_ozone":null,
+        "aqhi_no2":null,
+        "aqhi_ozone":null,
+        "aqhi_pm25":null,
+        "aqhi":null,
+    }}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://192.168.1.4:5678/");
+    this.connection = new WebSocket("ws://192.168.43.181:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
       let tempData = JSON.parse(evt.data)
@@ -49,7 +67,7 @@ class App extends Component {
        <MapComponent/>
        </div>
        <Guage/> */}
-       <Home/>
+       <Home data={this.state.currentData}/>
       </div>
     );
   }
