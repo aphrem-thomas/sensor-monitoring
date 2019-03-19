@@ -1,14 +1,14 @@
 .graph{
     border: 3px;
     border-radius: 10px;
-    background-color:#282f3d;
+    background-color:white;
     max-width: 650px;
     padding: 20px;
     margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:white;
+    color:black;
     
 }
 
