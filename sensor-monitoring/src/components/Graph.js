@@ -54,14 +54,14 @@ class Graph extends Component {
     return (
       <div className="graph">
         <div className="heading">{this.props.heading}</div>
-        <LineChart width={600} height={300} data={this.state.data}
+        <LineChart width={this.props.dimension.width} height={this.props.dimension.height} data={this.state.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           {/* <CartesianGrid strokeDasharray="1 1" /> */}
           <XAxis dataKey={this.props.xlabel} />
           <YAxis/>
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey={this.props.ylabel} stroke="#8884d8" />
+          <Line type="monotone" dataKey={this.props.ylabel} stroke={this.props.brushColor} />
         </LineChart>
       </div>
     );
