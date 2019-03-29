@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import Graph from './components/Graph';
 import PieDiagram from './components/Pie';
 import MapComponent from './components/Maps';
 import './App.css';
 import Guage from './components/Guage';
 import Home from './Pages/Home';
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -30,7 +30,7 @@ class App extends Component {
     }}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://192.168.50.156:5678/");
+    this.connection = new WebSocket("ws://0.0.0.0:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
       let tempData = JSON.parse(evt.data)
@@ -55,22 +55,27 @@ class App extends Component {
       }
       this.setState({data:[...this.state.data, tempData],currentData:tempData})
       console.log("recef",tempData);
+      this.props.dispatch({type:'ADD_AQI',payload:{ "aqi": tempData.aqi, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQHI',payload:{ "aqhi": tempData.aqhi, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_OZONE',payload:{ "ozone": tempData.ozone, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_PM10',payload:{ "pm10": tempData.pm10, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_PM2',payload:{ "pm2_5": tempData.pm2_5, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_NO2',payload:{ "no2": tempData.no2, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_CO',payload:{ "co": tempData.co, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_TEMP',payload:{ "temperature": tempData.temperature, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_HUMID',payload:{ "humidity": tempData.humidity, "time": tempData.created_at }});
     }
     this.connection.onclose=()=>console.log("closed");
   }
   render() {
     return (
       <div className="App">
-       {/* <Graph data={this.state.currentData} color='#8884d8' ylabel="time" xlabel="temperature"/>
-       <PieDiagram/>
-       <div className="map">
-       <MapComponent/>
-       </div>
-       <Guage/> */}
-       <Home data={this.state.currentData}/>
+       <Home/>
       </div>
     );
   }
 }
-
-export default App;
+function mapStateToProps(state,ownProps){
+  return({});
+}
+export default connect (mapStateToProps)(App);
