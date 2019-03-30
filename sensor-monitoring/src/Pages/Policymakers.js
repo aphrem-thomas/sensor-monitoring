@@ -7,7 +7,7 @@ const Policymakers =(props)=>{
     // console.log("value is ",props);
     return(
         <>
-            <div className="pageTitle">Layman Dashboard</div>
+            <div className="pageTitle">Policymakers Dashboard</div>
             <div className="policymaker">
             <Pie/>
             </div>

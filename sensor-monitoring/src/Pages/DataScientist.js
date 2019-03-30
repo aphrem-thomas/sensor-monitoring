@@ -5,6 +5,8 @@ import './DataScientist.css';
 
 const DataScientist = (props) => {
     return (
+        <>
+        <div className="pageTitle">DataScientist Dashboard</div>
         <div className="datascientist">
             <Graph brushColor="#f44242" dimension={{ height: 250, width: 600 }} ylabel="aqi" xlabel="time" heading="aqi sensor" data={props.aqi} />
             <Graph brushColor="#091cea" dimension={{ height: 250, width: 600 }} ylabel="aqhi" xlabel="time" heading="aqhi sensor" data={props.aqhi} />
@@ -16,6 +18,7 @@ const DataScientist = (props) => {
             <Graph brushColor="#16ea07" dimension={{ height: 160, width: 360 }} ylabel="temperature" xlabel="time" heading="Temperature sensor" data={props.temperature} />
             <Graph brushColor="#16ea07" dimension={{ height: 160, width: 360 }} ylabel="humidity" xlabel="time" heading="Humidity sensor" data={props.humidity} />
         </div>
+        </>
     );
 
 }

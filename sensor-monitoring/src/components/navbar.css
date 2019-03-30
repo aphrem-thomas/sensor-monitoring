@@ -47,6 +47,7 @@
 } 
 
 #navbar_checkbox:checked ~ #nav_drawer{
+    margin-top: 20px;
     visibility:visible;
     display: flex;
     flex-direction: column;
@@ -65,10 +66,11 @@
     color: white;
     box-shadow: 3px 7px 7px #060606;
     background: rgba(45, 45, 45,0.9);
-    text-align: left;
+    text-align: start;
     margin-top: 10px;
     height: 18px;
-    /* border-color: white; */
-    /* border: white 16px; */
-    border-radius: 4px
+    border-radius: 4px;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: center;
 }

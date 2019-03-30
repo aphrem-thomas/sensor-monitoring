@@ -5,6 +5,8 @@ import './Layman.css';
 import Guage from '../components/Guage.js';
 const Layman =(props)=>{
     return(
+        <>
+        <div className="pageTitle">Layman Dashboard</div>
         <div className="layman">
             <Guage max={500} label="temperature" value={props.temperature.length>0 && props.temperature[props.temperature.length-1].temperature}/> 
             <Guage max={500} label="humidity" value={props.humidity.length>0 && props.humidity[props.humidity.length-1].humidity}/> 
@@ -16,6 +18,7 @@ const Layman =(props)=>{
             <Guage max={500} label="aqhi" value={props.aqhi.length>0 && props.aqhi[props.aqhi.length-1].aqhi}/> 
             <Guage max={500} label="no2" value={props.no2.length>0 && props.no2[props.no2.length-1].no2}/> 
         </div>
+        </>
     );
 
 }
