@@ -1,14 +1,7 @@
-.layman{
+.policymaker{
     display: flex;
     flex-direction: row;
     width:100%;
     flex-flow: row wrap;
     justify-content:center;
-}
-
-.pageTitle{
-    color:white;
-    font-size: 40px;
-    position: relative;
-    top:-40px;
 }

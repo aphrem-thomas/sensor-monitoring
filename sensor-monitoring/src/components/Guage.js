@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactSpeedometer from "react-d3-speedometer"
-
+import './Guage.css'
 
 class Guage extends Component {
     render() {
@@ -13,7 +13,9 @@ class Guage extends Component {
                     startColor="green"
                     segments={10}
                     endColor="blue"
+                    currentValueText={this.props.value}
                 />
+                <h3 className="guage-label">{this.props.label}</h3>
             </div>
         );
     }
