@@ -15,9 +15,9 @@ const Home = () => {
             <Navbar />
             <div className="pages">
             <Switch>
-                <Route exact path='/' render={()=><Layman/>} />
-                <Route path='/datascientist' render={()=><DataScientist/>} />
-                <Route path='/policymakers' render={()=><Policymakers/>} />                                
+                <Route exact path='/dashboard' render={()=><Layman/>} />
+                <Route path='/dashboard/datascientist/' render={()=><DataScientist/>} />
+                <Route path='/dashboard/policymakers/' render={()=><Policymakers/>} />                                
             </Switch>
             </div>
         </div >
