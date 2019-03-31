@@ -47,14 +47,12 @@ class Graph extends Component {
     super(props);
     this.state = { data: [] }
   }
-  componentWillReceiveProps(nextProps) {
-    this.setState({ data: [...this.state.data, this.props.data] })
-  }
+ 
   render() {
     return (
       <div className="graph">
         <div className="heading">{this.props.heading}</div>
-        <LineChart width={this.props.dimension.width} height={this.props.dimension.height} data={this.state.data}
+        <LineChart width={this.props.dimension.width} height={this.props.dimension.height} data={this.props.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           {/* <CartesianGrid strokeDasharray="1 1" /> */}
           <XAxis dataKey={this.props.xlabel} />

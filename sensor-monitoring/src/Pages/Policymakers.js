@@ -3,8 +3,9 @@ import {connect} from 'react-redux';
 import Graph from '../components/Graph';
 import './Layman.css';
 import Pie from '../components/Pie';
+import './Policymakers.css';
+
 const Policymakers =(props)=>{
-    // console.log("value is ",props);
     return(
         <>
             <div className="pageTitle">Policymakers Dashboard</div>

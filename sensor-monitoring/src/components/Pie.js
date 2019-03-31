@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { PieChart, Pie , Tooltip} from 'recharts';
+import { PieChart, Pie , Tooltip,Sector, Cell} from 'recharts';
 import './Pie.css';
 const rangeData = [
   {
     "day": "05-01",
-    "temperature": -1
+    "temperature": 1
   },
   {
     "day": "05-02",
@@ -14,32 +14,21 @@ const rangeData = [
     "day": "05-03",
     "temperature": 3
   },
-  {
-    "day": "05-04",
-    "temperature": 4
-  },
-  {
-    "day": "05-05",
-    "temperature": 12
-  },
-  {
-    "day": "05-06",
-    "temperature": 5
-  },
-  {
-    "day": "05-07",
-    "temperature": 3
-  },
-  {
-    "day": "05-08",
-    "temperature": 0
-
-  },
-  {
-    "day": "05-09",
-    "temperature": -3
-  }
 ]
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+const RADIAN = Math.PI / 180;                    
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+ 	const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x  = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy  + radius * Math.sin(-midAngle * RADIAN);
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central">
+    	{`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
 
 class PieDiagram extends Component {
   render() {
@@ -47,9 +36,12 @@ class PieDiagram extends Component {
       <div className="Pie">
        <div className="heading">{this.props.heading}</div>
         <PieChart width={600} height={250}>
-          <Pie data={rangeData} dataKey="temperature" nameKey="day" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label/>
-          {/* <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label /> */}
-          <Tooltip/>
+          <Pie data={rangeData} dataKey="temperature" nameKey="day" cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="white"  label={renderCustomizedLabel}>
+          {
+          	rangeData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          }
+          </Pie>
+          
         </PieChart>
       </div>
     );

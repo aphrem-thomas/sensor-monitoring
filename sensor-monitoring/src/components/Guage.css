@@ -1,4 +1,17 @@
 .guage-label{
     position: relative;
     top: -145px;
+    text-align: center;
+}
+.guage{
+    border: 3px;
+    border-radius: 10px;
+    background-color:#282f3d;
+    max-width: 650px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:white;
 }

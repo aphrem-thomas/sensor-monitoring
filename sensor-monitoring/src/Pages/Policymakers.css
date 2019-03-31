@@ -5,3 +5,6 @@
     flex-flow: row wrap;
     justify-content:center;
 }
+.pageTitle{
+    text-align: center;
+}

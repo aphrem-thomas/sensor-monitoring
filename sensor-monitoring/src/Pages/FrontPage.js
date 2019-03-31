@@ -18,7 +18,7 @@ const FrontPage = ()=>{
              <input type="checkbox" name="staysignedin"/>
              Stay Signed In
              <a href="/">Forgot your password?</a>
-             <a href="/layman">dashboard</a>
+             <a href="/dashboard">dashboard</a>
            </div>
          </div>
         </div>
