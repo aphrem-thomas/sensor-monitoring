@@ -32,7 +32,7 @@ class App extends Component {
     }}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://192.168.50.156:5678/");
+    this.connection = new WebSocket("ws://0.0.0.105:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
       let tempData = JSON.parse(evt.data)

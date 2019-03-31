@@ -36,7 +36,7 @@ class PieDiagram extends Component {
       <div className="Pie">
        <div className="heading">{this.props.heading}</div>
         <PieChart width={600} height={250}>
-          <Pie data={rangeData} dataKey="temperature" nameKey="day" cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="white"  label={renderCustomizedLabel}>
+          <Pie data={this.props.pieData} dataKey="value" nameKey="sensor" cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="white"  label={renderCustomizedLabel}>
           {
           	rangeData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
           }

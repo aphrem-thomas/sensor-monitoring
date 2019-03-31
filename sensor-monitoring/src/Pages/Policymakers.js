@@ -6,11 +6,12 @@ import Pie from '../components/Pie';
 import './Policymakers.css';
 
 const Policymakers =(props)=>{
+    let data=[{"sensor":"aqi","value":props.aqi[props.aqi.length-1].aqi},{"sensor":"aqhi","value":props.aqhi[props.aqhi.length-1].aqhi}]
     return(
         <>
             <div className="pageTitle">Policymakers Dashboard</div>
             <div className="policymaker">
-            <Pie/>
+            <Pie pieData={data}/>
             </div>
         </>
     );
