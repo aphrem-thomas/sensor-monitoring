@@ -21,9 +21,9 @@ const FrontPage = ()=>{
              <a href="/dashboard">dashboard</a>
            </div> */}
            <div className="initialNavigation">
-           <div className="navbuttons"><a href="/dashboard">Overview</a></div>
-           <div className="navbuttons"><a href="#">Data Visualisation</a></div>
-           <div className="navbuttons"><a href="#">Data Calibration</a></div>
+           <div className="navbuttons"><a href="/">Overview</a></div>
+           <div className="navbuttons"><a href="/dashboard">Data Visualisation</a></div>
+           <div className="navbuttons"><a href="/">Data Calibration</a></div>
            </div>
          </div>
         </div>
