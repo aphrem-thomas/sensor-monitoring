@@ -8,15 +8,15 @@ const DataScientist = (props) => {
         <>
         <div className="pageTitle">DataScientist Dashboard</div>
         <div className="datascientist">
-            <Graph brushColor="#f44242" dimension={{ height: 250, width: 600 }} ylabel="aqi" xlabel="time" heading="aqi sensor" data={props.aqi} />
-            <Graph brushColor="#091cea" dimension={{ height: 250, width: 600 }} ylabel="aqhi" xlabel="time" heading="aqhi sensor" data={props.aqhi} />
-            <Graph brushColor="#ea08ea" dimension={{ height: 100, width: 260 }} ylabel="ozone" xlabel="time" heading="Ozone sensor" data={props.ozone} />
-            <Graph brushColor="#07ead3" dimension={{ height: 100, width: 260 }} ylabel="pm10" xlabel="time" heading="pm10 sensor" data={props.pm10} />
-            <Graph brushColor="#07ead3" dimension={{ height: 100, width: 260 }} ylabel="pm2_5" xlabel="time" heading="pm2_5 sensor" data={props.pm2_5} />
-            <Graph brushColor="#ea08ea" dimension={{ height: 100, width: 260 }} ylabel="no2" xlabel="time" heading="no2 sensor" data={props.no2} />
-            <Graph brushColor="#ea08ea" dimension={{ height: 160, width: 360 }} ylabel="co" xlabel="time" heading="co sensor" data={props.co} />
-            <Graph brushColor="#16ea07" dimension={{ height: 160, width: 360 }} ylabel="temperature" xlabel="time" heading="Temperature sensor" data={props.temperature} />
-            <Graph brushColor="#16ea07" dimension={{ height: 160, width: 360 }} ylabel="humidity" xlabel="time" heading="Humidity sensor" data={props.humidity} />
+            <Graph xAttributes={[{color:"#f44242",ylabel:"aqi"}]} dimension={{ height: 250, width: 600 }}  xlabel="time" heading="aqi sensor" data={props.aqi} />
+            <Graph xAttributes={[{color:"#091cea",ylabel:"aqhi"}]} dimension={{ height: 250, width: 600 }}  xlabel="time" heading="aqhi sensor" data={props.aqhi} />
+            <Graph xAttributes={[{color:"#ea08ea",ylabel:"ozone"}]} dimension={{ height: 100, width: 260 }}  xlabel="time" heading="Ozone sensor" data={props.ozone} />
+            <Graph xAttributes={[{color:"#07ead3",ylabel:"pm10"}]} dimension={{ height: 100, width: 260 }}  xlabel="time" heading="pm10 sensor" data={props.pm10} />
+            <Graph xAttributes={[{color:"#07ead3",ylabel:"pm2_5"}]} dimension={{ height: 100, width: 260 }}  xlabel="time" heading="pm2_5 sensor" data={props.pm2_5} />
+            <Graph xAttributes={[{color:"#ea08ea",ylabel:"no2"}]} dimension={{ height: 100, width: 260 }}  xlabel="time" heading="no2 sensor" data={props.no2} />
+            <Graph xAttributes={[{color:"#ea08ea",ylabel:"co"}]} dimension={{ height: 160, width: 360 }} xlabel="time" heading="co sensor" data={props.co} />
+            <Graph xAttributes={[{color:"#16ea07",ylabel:"temperature"}]} dimension={{ height: 160, width: 360 }} xlabel="time" heading="Temperature sensor" data={props.temperature} />
+            <Graph xAttributes={[{color:"#16ea07",ylabel:"humidity"}]} dimension={{ height: 160, width: 360 }}  xlabel="time" heading="Humidity sensor" data={props.humidity} />
         </div>
         </>
     );

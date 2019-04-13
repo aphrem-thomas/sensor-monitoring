@@ -32,7 +32,7 @@ class App extends Component {
     }}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://0.0.0.105:5678/");
+    this.connection = new WebSocket("ws://192.168.50.156:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
       let tempData = JSON.parse(evt.data)
@@ -67,7 +67,19 @@ class App extends Component {
       this.props.dispatch({type:'ADD_CO',payload:{ "co": tempData.co, "time": tempData.created_at }});
       this.props.dispatch({type:'ADD_TEMP',payload:{ "temperature": tempData.temperature, "time": tempData.created_at }});
       this.props.dispatch({type:'ADD_HUMID',payload:{ "humidity": tempData.humidity, "time": tempData.created_at }});
-      }
+      this.props.dispatch({type:'ADD_DATA',payload:{
+                          "time": tempData.created_at,
+                          "aqi": tempData.aqi,
+                          "aqhi": tempData.aqhi,
+                          "ozone": tempData.ozone,
+                          "pm10": tempData.pm10,
+                          "pm2_5": tempData.pm2_5,
+                          "no2": tempData.no2,
+                          "co": tempData.co,
+                          "temperature": tempData.temperature,
+                          "humidity": tempData.humidity,
+                        }});
+    }
     }
     this.connection.onclose=()=>console.log("closed");
   }

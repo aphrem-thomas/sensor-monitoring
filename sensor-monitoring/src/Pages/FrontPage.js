@@ -20,6 +20,11 @@ const FrontPage = ()=>{
              <a href="/">Forgot your password?</a>
              <a href="/dashboard">dashboard</a>
            </div>
+           <div className="initialNavigation">
+           <div className="navbuttons"><a href="/dashboard">dashboard</a></div>
+           <div className="navbuttons"><a href="/dashboard/datascientist/">datascientist</a></div>
+           <div className="navbuttons"><a href="/dashboard/policymakers">policymakers</a></div>
+           </div>
          </div>
         </div>
        </div>

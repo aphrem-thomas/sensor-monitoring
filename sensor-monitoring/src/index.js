@@ -29,6 +29,7 @@ const store=createStore(combineReducers({
     aqi:aqiReducer,
     aqhi:aqhiReducer,
     no2:no2Reducer,
+    data:sensorReducer,
 }),
 compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

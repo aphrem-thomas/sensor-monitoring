@@ -59,7 +59,9 @@ class Graph extends Component {
           <YAxis/>
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey={this.props.ylabel} stroke={this.props.brushColor} />
+          {this.props.xAttributes && this.props.xAttributes.map((attr)=>(
+            <Line type="monotone" dataKey={attr.ylabel} stroke={attr.color} />
+          ))}
         </LineChart>
       </div>
     );
