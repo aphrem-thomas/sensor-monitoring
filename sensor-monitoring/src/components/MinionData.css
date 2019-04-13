@@ -1,0 +1,19 @@
+.minions{
+    background-color:#282f3d;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    border-radius: 10px;
+    height: 100%;
+    width:100%;
+}
+
+.title{
+    color:white;
+}
+
+.data{
+    width: 100px;
+    overflow: hidden;
+}

@@ -1,6 +1,6 @@
 .layman{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width:100%;
     align-items: center;
     justify-content:center;
@@ -27,4 +27,34 @@
     padding-top:20px;
     text-align: left;
     width:155px;
+  }
+
+  .minionsLeft{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+  }
+
+  .minionsRight{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .minionsBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .minionsBottom .minion{
+    margin-left: 20px;
+  }
+  .minion{
+      height: 150px;
+      width:150px;
+      margin-top: 10px;
   }

@@ -34,7 +34,7 @@ class PieDiagram extends PureComponent {
               labelLine={false}
               label={ renderCustomizedLabel}
               outerRadius={100}
-              fill="red" >
+              >
           {
           	this.props.pieData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
           }

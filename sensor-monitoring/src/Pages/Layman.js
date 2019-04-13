@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Graph from '../components/Graph';
+import Minions from '../components/MinionData';
 import './Layman.css';
 import Guage from '../components/Guage.js';
 const Layman = (props) => {
@@ -8,11 +8,19 @@ const Layman = (props) => {
         <>
             <div className="pageTitle">Layman Dashboard</div>
             <div className="layman">
+                <div className="minionsLeft">
+                    <div className="minion">
+                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    </div>
+                    <div className="minion">
+                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    </div>
+                </div>
                 <div className="guages">
                     <Guage max={500} startColor="#72e831" endColor="#81211f" segments={10} label="aqi" value={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} />
                     <Guage max={10} startColor="#31cafb" endColor="#81211f" segments={10} label="aqhi" value={props.aqhi.length > 0 && props.aqhi[props.aqhi.length - 1].aqhi} />
                 </div>
-                <div className="table">
+                {/* <div className="table">
                     <table>
                         <tr>
                             <th>Sensor</th>
@@ -36,6 +44,25 @@ const Layman = (props) => {
                         </tr>
                       
                     </table>
+                </div> */}
+                <div className="minionsRight">
+                    <div className="minion">
+                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    </div>
+                    <div className="minion">
+                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    </div>
+                </div>
+            </div>
+            <div className="minionsBottom">
+                <div className="minion">
+                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                </div>
+                <div className="minion">
+                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                </div>
+                <div className="minion">
+                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
                 </div>
             </div>
         </>

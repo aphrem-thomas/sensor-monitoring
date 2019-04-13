@@ -4,14 +4,29 @@ import Graph from '../components/Graph';
 import './Layman.css';
 import Pie from '../components/Pie';
 import './Policymakers.css';
+const data1 = [
+    { name: 'Group A', value: 400 },
+    { name: 'Group B', value: 300 },
+    { name: 'Group C', value: 200 },
+  ];
 
+  const data2 = [
+    { name: 'Group A', value: 400 },
+    { name: 'Group B', value: 100 },
+    { name: 'Group C', value: 300 },
+  ];
 const Policymakers =(props)=>{
     let data=[{"sensor":"aqi","value":props.aqi && props.aqi.length >0?props.aqi[props.aqi.length-1].aqi:0},{"sensor":"aqhi","value":props.aqhi && props.aqhi.length >0?props.aqhi[props.aqhi.length-1].aqhi:0}]
     return(
         <>
             <div className="pageTitle">Policymakers Dashboard</div>
             <div className="policymaker">
-            <Pie pieData={data}/>
+            <div className="pieChart">
+                <Pie pieData={data1} heading="aqi"/>
+                <Pie pieData={data2} heading="aqhi"/>
+            </div>
+            
+
             <Graph dimension={{ height: 250, width: 600 }} ylabel="Sensor Readings" xlabel="time" heading="All sensor data" data={props.data} xAttributes={[
                 {color:"#f44242",ylabel:"aqi"},
                 {color:"#091cea",ylabel:"aqhi"},

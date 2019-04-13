@@ -8,3 +8,9 @@
 .pageTitle{
     text-align: center;
 }
+
+.pieChart{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
