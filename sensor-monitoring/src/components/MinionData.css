@@ -16,5 +16,6 @@
 .data{
     width: 100px;
     overflow: hidden;
-    color:blue;
+    color:white;
+    text-align: center;
 }

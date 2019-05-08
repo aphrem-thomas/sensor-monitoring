@@ -10,15 +10,15 @@ const Layman = (props) => {
             <div className="layman">
                 <div className="minionsLeft">
                     <div className="minion">
-                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                        <Minions data={props.temperature.length > 0 && props.temperature[props.temperature.length - 1].temperature} title="Temperature"/>
                     </div>
                     <div className="minion">
-                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                        <Minions data={props.humidity.length > 0 && props.humidity[props.humidity.length - 1].humidity} title="Humidity"/>
                     </div>
                 </div>
                 <div className="guages">
-                    <Guage max={500} startColor="#72e831" endColor="#81211f" segments={10} label="aqi" value={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} />
-                    <Guage max={10} startColor="#31cafb" endColor="#81211f" segments={10} label="aqhi" value={props.aqhi.length > 0 && props.aqhi[props.aqhi.length - 1].aqhi} />
+                    <Guage max={500} startColor="#72e831" endColor="#81211f" segments={10} label="AQI" value={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} />
+                    <Guage max={10} startColor="#31cafb" endColor="#81211f" segments={10} label="AQHI" value={props.aqhi.length > 0 && props.aqhi[props.aqhi.length - 1].aqhi} />
                 </div>
                 {/* <div className="table">
                     <table>
@@ -47,22 +47,22 @@ const Layman = (props) => {
                 </div> */}
                 <div className="minionsRight">
                     <div className="minion">
-                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                        <Minions data={props.pm2_5.length > 0 && props.pm2_5[props.pm2_5.length - 1].pm2_5} title="PM2.5"/>
                     </div>
                     <div className="minion">
-                        <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                        <Minions data={props.pm10.length > 0 && props.pm10[props.pm10.length - 1].pm10} title="PM10"/>
                     </div>
                 </div>
             </div>
             <div className="minionsBottom">
                 <div className="minion">
-                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    <Minions data={props.ozone.length > 0 && props.ozone[props.ozone.length - 1].ozone} title="Ozone"/>
                 </div>
                 <div className="minion">
-                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    <Minions data={props.co.length > 0 && props.co[props.co.length - 1].co} title="Carbon Monoxide"/>
                 </div>
                 <div className="minion">
-                    <Minions data={props.aqi.length > 0 && props.aqi[props.aqi.length - 1].aqi} title="temperature"/>
+                    <Minions data={props.no2.length > 0 && props.no2[props.no2.length - 1].no2} title="Nitrogen Dioxide"/>
                 </div>
             </div>
         </>
