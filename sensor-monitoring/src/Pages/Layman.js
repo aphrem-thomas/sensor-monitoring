@@ -5,7 +5,7 @@ import './Layman.css';
 import Guage from '../components/Guage.js';
 const Layman = (props) => {
     return (
-        <>
+        <div>
             <div className="pageTitle">Layman Dashboard</div>
             <div className="layman">
                 <div className="minionsLeft">
@@ -65,7 +65,7 @@ const Layman = (props) => {
                     <Minions data={props.no2.length > 0 && props.no2[props.no2.length - 1].no2} title="Nitrogen Dioxide"/>
                 </div>
             </div>
-        </>
+        </div>
     );
 
 }

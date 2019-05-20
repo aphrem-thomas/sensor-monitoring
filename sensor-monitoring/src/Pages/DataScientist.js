@@ -5,7 +5,7 @@ import './DataScientist.css';
 
 const DataScientist = (props) => {
     return (
-        <>
+        <div>
         <div className="pageTitle">DataScientist Dashboard</div>
         <div className="datascientist">
             <Graph xAttributes={[{color:"#f44242",ylabel:"aqi"}]} dimension={{ height: 250, width: 600 }}  xlabel="time" heading="AQI" data={props.aqi} />
@@ -18,7 +18,7 @@ const DataScientist = (props) => {
             <Graph xAttributes={[{color:"#16ea07",ylabel:"temperature"}]} dimension={{ height: 160, width: 360 }} xlabel="time" heading="Temperature" data={props.temperature} />
             <Graph xAttributes={[{color:"#16ea07",ylabel:"humidity"}]} dimension={{ height: 160, width: 360 }}  xlabel="time" heading="Humidity" data={props.humidity} />
         </div>
-        </>
+        </div>
     );
 
 }

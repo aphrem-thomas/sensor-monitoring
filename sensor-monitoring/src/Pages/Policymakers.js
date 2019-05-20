@@ -18,7 +18,7 @@ const data1 = [
 const Policymakers =(props)=>{
     let data=[{"sensor":"aqi","value":props.aqi && props.aqi.length >0?props.aqi[props.aqi.length-1].aqi:0},{"sensor":"aqhi","value":props.aqhi && props.aqhi.length >0?props.aqhi[props.aqhi.length-1].aqhi:0}]
     return(
-        <>
+        <div>
             <div className="pageTitle">Policymakers Dashboard</div>
             <div className="policymaker">
             <div className="pieChart">
@@ -39,7 +39,7 @@ const Policymakers =(props)=>{
                 {color:"#16ea07",ylabel:"humidity"},
             ]}  />
             </div>
-        </>
+        </div>
     );
 
 }
