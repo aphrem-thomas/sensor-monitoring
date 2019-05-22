@@ -8,6 +8,7 @@ import './App.css';
 import Guage from './components/Guage';
 import Home from './Pages/Home';
 import FrontPage from './Pages/FrontPage';
+import Overview from './Pages/Overview';
 class App extends Component {
   constructor(props){
     super(props);
@@ -88,6 +89,7 @@ class App extends Component {
      <Switch>
        <Route exact path="/" component={FrontPage}/>
        <Route path="/dashboard/" component={Home}/>
+       <Route path="/overview" component={Overview}/>
      </Switch>
     );
   }

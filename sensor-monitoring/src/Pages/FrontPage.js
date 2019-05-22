@@ -21,9 +21,9 @@ const FrontPage = ()=>{
              <a href="/dashboard">dashboard</a>
            </div> */}
            <div className="initialNavigation">
-           <div className="navbuttons"><a href="/">Overview</a></div>
+           <div className="navbuttons"><a href="/overview">Overview</a></div>
            <div className="navbuttons"><a href="/dashboard">Data Visualisation</a></div>
-           <div className="navbuttons"><a href="/">Data Calibration</a></div>
+           <div className="navbuttons"><a href="http://127.0.0.1:9000/">Data Calibration</a></div>
            </div>
          </div>
         </div>

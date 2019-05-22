@@ -1,0 +1,23 @@
+.overview{
+    padding: 45px;
+}
+.heading-overview{
+    color: rgba(255,255,255);
+    font-size: 35px;
+}
+
+.heading-overview::after{
+    content: " ";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #0ed4e8;
+    top: 96px;
+    left: 46px;
+}
+.text-matter{
+    color: white;
+    text-align: justify;
+    margin-top: 20px;
+    opacity:0.5;
+}
