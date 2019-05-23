@@ -33,10 +33,10 @@ class App extends Component {
     }}
   }
   componentDidMount(){
-    this.connection = new WebSocket("ws://192.168.43.181:5678/");
+    this.connection = new WebSocket("ws://192.168.0.104:5678/");
     this.connection.onopen = o => console.log(o);
     this.connection.onmessage = evt => {
-      let tempData = JSON.parse(evt.data)
+      let tempData = JSON.parse(evt.data);
       let received_data={
         entry_id:tempData.entry_id,
         created_at:tempData.created_at,
@@ -68,6 +68,13 @@ class App extends Component {
       this.props.dispatch({type:'ADD_CO',payload:{ "co": tempData.co, "time": tempData.created_at }});
       this.props.dispatch({type:'ADD_TEMP',payload:{ "temperature": tempData.temperature, "time": tempData.created_at }});
       this.props.dispatch({type:'ADD_HUMID',payload:{ "humidity": tempData.humidity, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQHI_NO2',payload:{ "aqhi_no2": tempData.aqhi_no2, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQHI_OZONE',payload:{ "aqhi_ozone": tempData.aqhi_ozone, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQHI_PM25',payload:{ "aqhi_pm25": tempData.aqhi_pm25, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQI_NO2',payload:{ "aqi_no2": tempData.aqi_no2, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQI_OZONE',payload:{ "aqi_ozone": tempData.aqi_ozone, "time": tempData.created_at }});
+      this.props.dispatch({type:'ADD_AQI_PM25',payload:{ "aqi_pm25": tempData.aqi_pm25, "time": tempData.created_at }});
+      
       this.props.dispatch({type:'ADD_DATA',payload:{
                           "time": tempData.created_at,
                           "aqi": tempData.aqi,

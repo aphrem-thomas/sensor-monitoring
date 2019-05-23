@@ -14,6 +14,12 @@ import {
     aqhiReducer,
     no2Reducer,
     sensorReducer,
+    aqhi_no2,
+    aqi_no2,
+    aqhi_ozone,
+    aqi_ozone,
+    aqhi_pm25,
+    aqi_pm25,
 } from './reducers/sensorReducer';
 import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
@@ -30,6 +36,13 @@ const store=createStore(combineReducers({
     aqhi:aqhiReducer,
     no2:no2Reducer,
     data:sensorReducer,
+    aqhi_no2,
+    aqi_no2,
+    aqhi_pm25,
+    aqi_pm25,
+    aqhi_ozone,
+    aqi_ozone,
+
 }),
 compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

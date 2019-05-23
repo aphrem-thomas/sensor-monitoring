@@ -4,19 +4,20 @@ import Graph from '../components/Graph';
 import './Layman.css';
 import Pie from '../components/Pie';
 import './Policymakers.css';
-const data1 = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 200 },
-  ];
 
-  const data2 = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 100 },
-    { name: 'Group C', value: 300 },
-  ];
 const Policymakers =(props)=>{
-    let data=[{"sensor":"aqi","value":props.aqi && props.aqi.length >0?props.aqi[props.aqi.length-1].aqi:0},{"sensor":"aqhi","value":props.aqhi && props.aqhi.length >0?props.aqhi[props.aqhi.length-1].aqhi:0}]
+    const data1 = [
+        { name: 'aqi_ozone', value: props.aqi_ozone },
+        { name: 'aqi_pm25', value: props.aqi_pm25 },
+        { name: 'aqi_no2', value: props.aqi_no2 },
+      ];
+    
+      const data2 = [
+        { name: 'aqhi_ozone', value: props.aqhi_ozone },
+        { name: 'aqhi_pm25', value: props.aqhi_pm25 },
+        { name: 'aqhi_no2', value: props.aqhi_no2 },
+      ];
+    
     return(
         <div>
             <div className="pageTitle">Policymakers Dashboard</div>
@@ -46,16 +47,13 @@ const Policymakers =(props)=>{
 
 function mapStateToProps(state, ownProps) {
     return ({
-        temperature:state.temperature,
-        humidity:state.humidity,
-        ozone:state.ozone,
-        pm10:state.pm10,
-        pm2_5:state.pm2_5,
-        co:state.co,
-        aqi:state.aqi,
-        aqhi:state.aqhi,
-        no2:state.no2,
-        data:state.data
+        data:state.data,
+        aqhi_no2:state.aqhi_no2,
+        aqi_no2:state.aqi_no2,
+        aqhi_pm25:state.aqhi_pm25,
+        aqi_pm25:state.aqi_pm25,
+        aqhi_ozone:state.aqhi_ozone,
+        aqi_ozone:state.aqi_ozone,
     })
 }
 

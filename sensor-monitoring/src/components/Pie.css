@@ -17,3 +17,53 @@
     justify-content: flex-start;
     padding: 20px;
 }
+
+.data-name{
+
+}
+.dataValue{
+    display: flex;
+}
+
+.sensor-data{
+    display: flex;
+}
+
+.chart-wrapper{
+
+}
+
+.dataDotOrange{
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    top: 7px;
+    position: relative;
+    margin-left: 10px;
+    background-color: #febb34;
+}
+
+.dataDotBlue{
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    top: 7px;
+    position: relative;
+    margin-left: 10px;
+    background-color: #0887fa;
+}
+
+.dataDotGreen{
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    top: 7px;
+    position: relative;
+    margin-left: 10px;
+    background-color:#52c49f;
+}
+
+.data-value{
+    width: 100%;
+    margin-left: 100px;
+}

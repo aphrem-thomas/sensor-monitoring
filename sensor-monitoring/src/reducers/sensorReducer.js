@@ -88,3 +88,57 @@ export function humidityReducer(state=[], action){
         default: return state;
     }
 }
+
+export function aqi_pm25(state=null, action){
+    switch(action.type){
+        case 'ADD_AQI_PM25':{
+            return action.payload.aqi_pm25;
+        }
+        default: return state;
+    }
+}
+
+export function aqhi_pm25(state=null, action){
+    switch(action.type){
+        case 'ADD_AQHI_PM25':{
+            return action.payload.aqhi_pm25;
+        }
+        default: return state;
+    }
+}
+
+export function aqi_ozone(state=null, action){
+    switch(action.type){
+        case 'ADD_AQI_OZONE':{
+            return action.payload.aqi_ozone;
+        }
+        default: return state;
+    }
+}
+
+export function aqhi_ozone(state=null, action){
+    switch(action.type){
+        case 'ADD_AQHI_OZONE':{
+            return action.payload.aqhi_ozone;
+        }
+        default: return state;
+    }
+}
+
+export function aqi_no2(state=null, action){
+    switch(action.type){
+        case 'ADD_AQI_NO2':{
+            return action.payload.aqi_no2;
+        }
+        default: return state;
+    }
+}
+
+export function aqhi_no2(state=null, action){
+    switch(action.type){
+        case 'ADD_AQHI_NO2':{
+            return action.payload.aqhi_no2;
+        }
+        default: return state;
+    }
+}

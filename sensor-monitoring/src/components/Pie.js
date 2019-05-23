@@ -25,10 +25,11 @@ class PieDiagram extends PureComponent {
     return (
       <div className="Pie">
        <div className="heading">{this.props.heading}</div>
+       <div className="chart-wrapper">
         <PieChart width={600} height={250}>
           <Pie data={this.props.pieData}
               dataKey="value"
-              nameKey="sensor"
+              nameKey="name"
               cx={200}
               cy={100}
               labelLine={false}
@@ -41,6 +42,20 @@ class PieDiagram extends PureComponent {
           </Pie>
           
         </PieChart>
+          <div className="data-value">
+        {this.props.pieData.map(item=>{return(
+          <div className="sensor-data">
+          <div className="data-name" key={item.name}>{`${item.name} : `}</div>
+          <div className="dataValue" key={item.name}>{item.value}
+            {(item.name==="aqi_no2" || item.name==="aqhi_no2")?<div className="dataDotOrange"></div>:null}
+            {(item.name==="aqi_ozone" || item.name==="aqhi_ozone")?<div className="dataDotBlue"></div>:null}
+            {(item.name==="aqi_pm25" || item.name==="aqhi_pm25")?<div className="dataDotGreen"></div>:null}
+          </div>
+          </div>
+          )
+          })}
+          </div>
+        </div>
       </div>
     );
   }
