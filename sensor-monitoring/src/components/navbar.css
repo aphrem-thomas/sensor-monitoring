@@ -77,5 +77,19 @@
 
 .home-link{
     text-decoration: none;
-    font-size: 25px;
+    padding: 11px;
+    text-decoration: none;
+    font-size: 21px;
+    color: white;
+    box-shadow: 3px 7px 7px #060606;
+    background: rgba(45, 45, 45,0.9);
+    text-align: start;
+    margin-top: 10px;
+    height: 18px;
+    border-radius: 4px;
+    letter-spacing: 5px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
 }
