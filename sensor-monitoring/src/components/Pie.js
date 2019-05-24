@@ -21,6 +21,14 @@ const renderCustomizedLabel = ({
 };
 
 class PieDiagram extends PureComponent {
+  static getDerivedStateFromProps(nextProps,prevState){
+    if(nextProps.pieData){
+      let tot=nextProps.pieData.reduce((acc,item)=>{
+        return acc+item.value
+      },0)
+      return ({totalValue:tot})
+    }
+  }
   render() {
     return (
       <div className="Pie">
@@ -46,7 +54,7 @@ class PieDiagram extends PureComponent {
         {this.props.pieData.map(item=>{return(
           <div className="sensor-data">
           <div className="data-name" key={item.name}>{`${item.name} : `}</div>
-          <div className="dataValue" key={item.name}>{item.value}
+          <div className="dataValue" key={item.name}>{`${((item.value/this.state.totalValue)*100).toFixed(2)} %`}
             {(item.name==="aqi_no2" || item.name==="aqhi_no2")?<div className="dataDotOrange"></div>:null}
             {(item.name==="aqi_ozone" || item.name==="aqhi_ozone")?<div className="dataDotBlue"></div>:null}
             {(item.name==="aqi_pm25" || item.name==="aqhi_pm25")?<div className="dataDotGreen"></div>:null}

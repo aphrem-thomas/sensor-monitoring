@@ -29,14 +29,14 @@ const Policymakers =(props)=>{
             
 
             <Graph dimension={{ height: 250, width: 600 }} ylabel="Sensor Readings" xlabel="time" heading="All sensor data" data={props.data} xAttributes={[
-                {color:"#f44242",ylabel:"aqi"},
-                {color:"#091cea",ylabel:"aqhi"},
+                {color:"#0e0be0",ylabel:"aqi"},
+                {color:"#710be0",ylabel:"aqhi"},
                 {color:"#ea08ea",ylabel:"ozone"},
                 {color:"#07ead3",ylabel:"pm10"},
-                {color:"#07ead3",ylabel:"pm2_5"},
-                {color:"#ea08ea",ylabel:"no2"},
-                {color:"#ea08ea",ylabel:"co"},
-                {color:"#16ea07",ylabel:"temperature"},
+                {color:"#e8f442",ylabel:"pm2_5"},
+                {color:"#0be0dc",ylabel:"no2"},
+                {color:"#0be091",ylabel:"co"},
+                {color:"#e00b0b",ylabel:"temperature"},
                 {color:"#16ea07",ylabel:"humidity"},
             ]}  />
             </div>

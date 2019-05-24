@@ -6,7 +6,7 @@ class MinionData extends Component {
         return (
             <div className="minions">
                <h3 className="title">{this.props.title}</h3>
-               <div className="data">{this.props.data}</div>
+               <div className="data">{`${this.props.data} ${this.props.unit}`}</div>
             </div>
         );
     }

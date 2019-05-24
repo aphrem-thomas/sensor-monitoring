@@ -10,10 +10,10 @@ const Layman = (props) => {
             <div className="layman">
                 <div className="minionsLeft">
                     <div className="minion">
-                        <Minions data={props.temperature.length > 0 && props.temperature[props.temperature.length - 1].temperature} title="Temperature"/>
+                        <Minions unit={"°C"} data={props.temperature.length > 0 && props.temperature[props.temperature.length - 1].temperature} title="Temperature"/>
                     </div>
                     <div className="minion">
-                        <Minions data={props.humidity.length > 0 && props.humidity[props.humidity.length - 1].humidity} title="Humidity"/>
+                        <Minions unit={"%"} data={props.humidity.length > 0 && props.humidity[props.humidity.length - 1].humidity} title="Humidity"/>
                     </div>
                 </div>
                 <div className="guages">
@@ -47,22 +47,22 @@ const Layman = (props) => {
                 </div> */}
                 <div className="minionsRight">
                     <div className="minion">
-                        <Minions data={props.pm2_5.length > 0 && props.pm2_5[props.pm2_5.length - 1].pm2_5} title="PM2.5"/>
+                        <Minions unit={"μg/m³"} data={props.pm2_5.length > 0 && props.pm2_5[props.pm2_5.length - 1].pm2_5} title="PM2.5"/>
                     </div>
                     <div className="minion">
-                        <Minions data={props.pm10.length > 0 && props.pm10[props.pm10.length - 1].pm10} title="PM10"/>
+                        <Minions unit={"μg/m³"} data={props.pm10.length > 0 && props.pm10[props.pm10.length - 1].pm10} title="PM10"/>
                     </div>
                 </div>
             </div>
             <div className="minionsBottom">
                 <div className="minion">
-                    <Minions data={props.ozone.length > 0 && props.ozone[props.ozone.length - 1].ozone} title="Ozone"/>
+                    <Minions unit={"ppm"} data={props.ozone.length > 0 && props.ozone[props.ozone.length - 1].ozone} title="Ozone"/>
                 </div>
                 <div className="minion">
-                    <Minions data={props.co.length > 0 && props.co[props.co.length - 1].co} title="Carbon Monoxide"/>
+                    <Minions unit={"ppm"} data={props.co.length > 0 && props.co[props.co.length - 1].co} title="Carbon Monoxide"/>
                 </div>
                 <div className="minion">
-                    <Minions data={props.no2.length > 0 && props.no2[props.no2.length - 1].no2} title="Nitrogen Dioxide"/>
+                    <Minions unit={"ppm"} data={props.no2.length > 0 && props.no2[props.no2.length - 1].no2} title="Nitrogen Dioxide"/>
                 </div>
             </div>
         </div>
