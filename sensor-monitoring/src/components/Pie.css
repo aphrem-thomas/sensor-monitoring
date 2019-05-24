@@ -19,7 +19,7 @@
 }
 
 .data-name{
-
+    text-transform: uppercase;
 }
 .dataValue{
     display: flex;

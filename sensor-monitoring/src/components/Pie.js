@@ -32,7 +32,7 @@ class PieDiagram extends PureComponent {
   render() {
     return (
       <div className="Pie">
-       <div className="heading">{this.props.heading}</div>
+       <div className="heading">{this.props.heading}{" :  "}{this.props.displayValue}</div>
        <div className="chart-wrapper">
         <PieChart width={600} height={250}>
           <Pie data={this.props.pieData}

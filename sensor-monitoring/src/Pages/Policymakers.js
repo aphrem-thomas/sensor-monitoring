@@ -22,10 +22,10 @@ const Policymakers =(props)=>{
         <div>
             <div className="pageTitle">Policymakers Dashboard</div>
             <div className="policymaker">
-            <div className="pieChart">
-                <Pie pieData={data1} heading="aqi"/>
-                <Pie pieData={data2} heading="aqhi"/>
-            </div>
+            {props.data && <div className="pieChart">
+                <Pie pieData={data1} heading="AQI" displayValue= {props.data.length>0 && props.data[props.data.length-1].aqi}/>
+                <Pie pieData={data2} heading="AQHI" displayValue={props.data.length>0 && props.data[props.data.length-1].aqhi}/>
+            </div>}
             
 
             <Graph dimension={{ height: 250, width: 600 }} ylabel="Sensor Readings" xlabel="time" heading="All sensor data" data={props.data} xAttributes={[
